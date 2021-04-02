@@ -72,8 +72,17 @@ def get_reserve_ratio(data):
     return(reserve_ratio)
 
 
+def get_dividend_yield_ratio(data):
+    yield_ratio = [0, 0, 0, 0]
+    for i in range(4):
+        yield_ratio[i] = data.iloc[14].iloc[i]
+
+    print(yield_ratio)
+    return(yield_ratio)
+
+
 df = get_finance_data('079430')
-income = get_net_income(df)
+income = get_dividend_yield_ratio(df)
 
 print(df)
 print(income)
